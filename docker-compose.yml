@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db_dev:
+    image: postgres:12.2
+    container_name: bside-db_dev
+    ports:
+      - "15432:5432"
+    volumes:
+      - ".data/db:/var/lib/postgresql/data"
+    environment:
+      - "POSTGRES_USER=bside"
+      - "POSTGRES_PASSWORD=pass123"
+      - "POSTGRES_DB=bside"
+
+  db_test:
+    image: postgres:12.2
+    container_name: bside-db_test
+    ports:
+      - "25432:5432"
+    volumes:
+      - ".data/db:/var/lib/postgresql/data_test"
+    environment:
+      - "POSTGRES_USER=bside"
+      - "POSTGRES_PASSWORD=pass123"
+      - "POSTGRES_DB=bside"
