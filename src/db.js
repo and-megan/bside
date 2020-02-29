@@ -1,6 +1,6 @@
-const config = require('../dist/config');
+import * as config from '../dist/config';
 
-const DEFAULT_OPTIONS = {
+const OPTIONS = {
   username: config.dbUser,
   password: config.dbPassword,
   database: config.dbName,
@@ -14,14 +14,10 @@ const DEFAULT_OPTIONS = {
 
 
 module.exports = {
-  development: {
-    ...DEFAULT_OPTIONS,
-    port: config.dbPort || 15432
-  },
   test: {
-    ...DEFAULT_OPTIONS,
-    port: config.dbPort || 25432
+    ...OPTIONS,
+    port: config.dbPort || 5433
   },
-
-  production: DEFAULT_OPTIONS
+  development: OPTIONS,
+  production: OPTIONS
 };
