@@ -1,8 +1,7 @@
-.data/
+.data
 .eslintrc.json
 .prettierrc
-.vscode/
+.vscode
 
-node_modules/
-dist/
-
+node_modules
+dist

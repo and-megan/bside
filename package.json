@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
+    "migrate": "sequelize db:migrate",
     "start": "node dist/index.js",
     "test": "NODE_ENV=test lab",
     "pretest": "npm run build"
@@ -20,6 +21,8 @@
   "dependencies": {
     "@hapi/hapi": "^18.4.1",
     "@types/hapi__hapi": "^19.0.2",
+    "dotenv": "^8.2.0",
+    "pg": "^7.18.2",
     "sequelize": "^5.21.5"
   },
   "devDependencies": {
