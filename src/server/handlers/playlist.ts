@@ -2,7 +2,7 @@ import * as Hapi from '@hapi/hapi';
 
 import { PlaylistAttributes } from '../interfaces';
 
-export function playlistCreate (request: Hapi.Request, h: Hapi.ResponseToolkit) {
+export const playlistCreate = (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
     const { 
         name,
         origin,
@@ -16,14 +16,14 @@ export function playlistCreate (request: Hapi.Request, h: Hapi.ResponseToolkit) 
     };
 }
 
-export function playlistIndex (request: Hapi.Request, h: Hapi.ResponseToolkit) {
+export const playlistIndex = (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
     return {
         message: 'Showing all playlists',
         data: { ids: [] }
     };
 }
 
-export function playlistShow (request: Hapi.Request, h: Hapi.ResponseToolkit) {
+export const playlistShow = (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
     const { id } = request.params;
 
     return {

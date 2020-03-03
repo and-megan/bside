@@ -6,7 +6,7 @@ import { playlistCreate, playlistShow, playlistIndex } from './server/handlers';
 
 const init = async () => {
   const server = new Hapi.Server({
-    port: 3000,
+    port: 8080,
     host: 'localhost'
   });
 

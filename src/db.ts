@@ -1,4 +1,4 @@
-import * as config from '../dist/config';
+import config = require('./config');
 
 const OPTIONS = {
   username: config.dbUser,
