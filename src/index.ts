@@ -4,10 +4,13 @@ import * as Hapi from '@hapi/hapi';
 
 import { playlistCreate, playlistShow, playlistIndex } from './server/handlers';
 
+
+require('dotenv').config();
+
 const init = async () => {
   const server = new Hapi.Server({
-    port: 8080,
-    host: 'localhost'
+    port: SERVER_PORT,
+    host: process.env.SERVER_HOST
   });
 
   server.route({
