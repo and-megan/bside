@@ -13,17 +13,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      origin: {
+      spotify_uri: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      origin_type: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      spotify_created: {
-        type: Sequelize.BOOLEAN,
-        default: false
+        allowNull: true
       },
       tracks: {
         type: Sequelize.JSONB
@@ -32,10 +24,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updated_at: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     })
   },
   down: (queryInterface, Sequelize) => {
