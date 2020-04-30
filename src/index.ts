@@ -4,12 +4,14 @@ import * as Hapi from '@hapi/hapi';
 
 import { playlistCreate, playlistShow, playlistIndex } from './server/handlers';
 
+import { createSpotifyApi, authorizeSpotifyApi } from './server/services/spotify';
+
 
 require('dotenv').config();
 
 const init = async () => {
   const server = new Hapi.Server({
-    port: SERVER_PORT,
+    port: process.env.SERVER_PORT,
     host: process.env.SERVER_HOST
   });
 
@@ -32,6 +34,12 @@ const init = async () => {
   });
 
   await server.start();
+
+  const spotifyApi = await createSpotifyApi();
+
+  authorizeSpotifyApi(spotifyApi);
+
+  console.log('succcess')
 
   console.log(`Server running: ${server.info.uri}`)
 };
